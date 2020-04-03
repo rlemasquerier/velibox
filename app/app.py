@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 import serial
+import time
+
+
+def sendMessage(message):
+    ser.write((message+"\n").encode('utf-8'))
+
 
 if __name__ == '__main__':
     ser = serial.Serial('/dev/tty.usbmodem143301', 9600, timeout=1)
     ser.flush()
-    while True:
-        if ser.in_waiting > 0:
-            line = ser.readline().decode('utf-8').rstrip()
-            print(line)
+    time.sleep(2)  # Leave time for the Arduino to initialize
+    sendMessage("128")
