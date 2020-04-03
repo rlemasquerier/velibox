@@ -19,6 +19,9 @@ def fetchAvailableEBikes():
 
 if __name__ == '__main__':
     while True:
-        availableEBikes = fetchAvailableEBikes()
-        sendMessage(str(availableEBikes))
+        try:
+            availableEBikes = fetchAvailableEBikes()
+            sendMessage(str(availableEBikes))
+        except:
+            pass
         time.sleep(30)
