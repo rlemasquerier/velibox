@@ -15,7 +15,6 @@ void setup()
 	byte segmentPins[] = {9, 2, 3, 5, 6, 8, 7, 4};
 
 	bool resistorsOnSegments = true;
-	bool updateWithDelaysIn = true;
 	byte hardwareConfig = COMMON_CATHODE;
 	sevseg.begin(hardwareConfig, numDigits, digitPins, segmentPins, resistorsOnSegments);
 	sevseg.setBrightness(90);
