@@ -5,7 +5,10 @@
 ### Requirements
 
 - Python 2.7
-- pipenv: `pip install --user pipenv`
+- pipenv: 
+  ```bash
+  pip install --user pipenv
+  ```
 
 ### Install
 
@@ -32,3 +35,32 @@ pipenv run python app.py
 ```
 
 ## Arduino board
+
+### Install
+
+#### Requirements
+
+- Arduino board ATmega2560. Would work with other boards, but it may require some changes on the configuration
+- Platformio
+  ```bash
+  curl -fsSL https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py -o get-platformio.py
+  python3 get-platformio.py
+  ```
+
+### Electrical setup
+
+TODO
+
+### Flash the board
+
+Test that the code compile with:
+
+```bash
+platformio run
+```
+
+Upload the code to Arduino board with:
+
+```bash
+platformio run --target upload
+```
